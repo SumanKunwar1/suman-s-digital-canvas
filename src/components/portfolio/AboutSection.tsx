@@ -58,7 +58,7 @@ export default function AboutSection() {
                     <p className="text-xs text-muted-foreground mt-1">Kathmandu, Nepal 🇳🇵</p>
                   </div>
                   <div className="flex gap-2">
-                    {["React", "Node", "AWS", "MongoDB"].map((tag) => (
+                    {["MERN stack", "Next.js", "AWS", "Firebase"].map((tag) => (
                       <span key={tag} className="px-2 py-0.5 rounded text-xs bg-muted/60 text-muted-foreground border border-border/50">
                         {tag}
                       </span>
@@ -92,20 +92,20 @@ export default function AboutSection() {
             className="space-y-6"
           >
             <p className="text-base text-muted-foreground leading-relaxed">
-              Suman Kunwar is a{" "}
+              I'm a{" "}
               <span className="text-foreground font-medium">Full Stack Developer</span> based in
               Kathmandu, Nepal with experience designing and developing scalable digital platforms.
-              His expertise includes{" "}
+              My expertise includes{" "}
               <span className="text-accent font-medium">MERN stack development</span>, REST APIs,
               cloud deployment, and data-driven applications.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              He has worked on multiple production websites and platforms including{" "}
+              I have worked on multiple production websites and platforms including{" "}
               <span className="text-primary font-medium">e-commerce systems</span>, company websites,
               travel booking systems, and digital service platforms.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              He is passionate about building{" "}
+              I am passionate about building{" "}
               <span className="text-accent font-medium">high-performance applications</span> that
               solve real-world problems and deliver meaningful user experiences.
             </p>

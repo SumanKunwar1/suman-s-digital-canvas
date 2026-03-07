@@ -130,7 +130,7 @@ export default function HeroSection() {
             {[
               { number: "40+", label: "Projects Built" },
               { number: "20+", label: "Technologies" },
-              { number: "3+",  label: "Years Experience" },
+              { number: "4+",  label: "Years Experience" },
               { number: "35+", label: "Clients Served" },
             ].map((stat) => (
               <div key={stat.label} className="glass-card-gold rounded-xl p-4 text-center">

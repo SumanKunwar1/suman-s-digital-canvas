@@ -1,8 +1,8 @@
 import { Github, Linkedin, Globe, Code2, ArrowUp } from "lucide-react";
 
 const socials = [
-  { icon: Github, href: "https://github.com/", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/SumanKunwar1/", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/suman-kunwar-204286227/", label: "LinkedIn" },
   { icon: Globe, href: "#", label: "Portfolio" },
 ];
 
