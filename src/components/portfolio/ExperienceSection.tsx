@@ -6,7 +6,7 @@ const experiences = [
   {
     role: "Lead Strategist",
     company: "W.A.S. Media Marketing",
-    period: "2025 – Present",
+    period: "Nov 2025 – Present",
     type: "Full-time",
     current: true,
     highlights: [
@@ -18,7 +18,7 @@ const experiences = [
   {
     role: "Full Stack Developer",
     company: "W.A.S. Media Marketing",
-    period: "2024 – 2025",
+    period: "Oct 2024 - Nov 2025",
     type: "Full-time",
     current: false,
     highlights: [
@@ -28,15 +28,41 @@ const experiences = [
     ],
   },
   {
-    role: "Full Stack Developer Intern",
-    company: "W.A.S. Media Marketing",
-    period: "2024",
-    type: "Internship",
+    role: "Web Developer",
+    company: "House of Rajkarnicar",
+    period: "Mar 2024 - Oct 2024",
+    type: "Full-time",
     current: false,
     highlights: [
-      "Assisted in web development and deployment workflows",
-      "Supported testing, debugging, and QA processes",
-      "Gained hands-on experience with modern dev stack",
+      "Built and updated event and brand websites with integrated social media features.",
+      "Implemented SEO best practices to improve search rankings and visibility.",
+      "Coordinated with designers and marketers to ensure cohesive digital experiences.",
+    ],
+  },
+  {
+    role: "Digital Marketer & E-commerce Officer",
+    company: "MastaKala.com",
+    period: "Dec 2023 - Mar 2024",
+    type: "Full-time",
+    current: false,
+    highlights: [
+      "Managed and optimized the e-commerce platform to improve sales and user experience.",
+      "Created and managed digital content for social media and marketing campaigns.",
+      "Enhanced brand presence through targeted online strategies.",
+
+    ],
+  },
+  {
+    role: "Product Head / Digital Marketer",
+    company: "Socheko.com",
+    period: "Jul 2021 - Oct 2023",
+    type: "Full-time",
+    current: false,
+    highlights: [
+      "Directed digital marketing initiatives across multiple channels to drive growth.",
+      "Conducted market research to identify new opportunities and trends.",
+      "Led and mentored a team in executing strategic projects and campaigns.",
+
     ],
   },
 ];
