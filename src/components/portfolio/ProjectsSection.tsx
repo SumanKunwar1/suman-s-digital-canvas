@@ -1,241 +1,149 @@
-import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { ExternalLink, Globe } from "lucide-react";
-
-// Real website screenshots via thum.io free screenshot API
-const SHOT = (url: string) =>
-  `https://image.thum.io/get/width/600/crop/380/noanimate/${url}`;
+import { useRef } from "react";
+import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
     title: "Constellation Cooperative",
     url: "https://constellationcooperative.com/",
-    screenshot: SHOT("https://constellationcooperative.com/"),
-    description:
-      "A professional cooperative organization website presenting the company's services, initiatives, and organizational structure with a modern digital presence.",
-    category: "Corporate Website",
-    tags: ["React", "Node.js", "CMS"],
-    color: "gold",
+    desc: "A professional cooperative organization website designed to present the company's services, initiatives, and organizational structure.",
+    tag: "Corporate Website",
+    image: "https://res.cloudinary.com/dcsgax3ld/image/upload/v1772878893/Screenshot_2026-03-07_155440_jlr8a7.png",
   },
   {
     title: "OM Sounds",
     url: "https://omsounds.com/",
-    screenshot: SHOT("https://omsounds.com/"),
-    description:
-      "An e-commerce platform for authentic Nepali hand-hammered singing bowls worldwide — blending portfolio storytelling with a full online store.",
-    category: "E-commerce + Portfolio",
-    tags: ["MERN", "Stripe", "MongoDB"],
-    color: "warm",
+    desc: "An e-commerce platform for selling authentic Nepali hand-hammered singing bowls worldwide with a full online store experience.",
+    tag: "E-commerce",
+    image: "https://res.cloudinary.com/dcsgax3ld/image/upload/v1772878870/Screenshot_2026-03-07_155649_hlskc7.png",
   },
   {
     title: "Pure Land Hospitality",
     url: "https://purelandhospitality.com.np/",
-    screenshot: SHOT("https://purelandhospitality.com.np/"),
-    description:
-      "A professional hospitality website showcasing services, accommodations, and experiences.",
-    category: "Company Website",
-    tags: ["React", "CMS", "Tailwind"],
-    color: "gold",
-  },
-  {
+    desc: "A professional hospitality website showcasing services, accommodations, and experiences.",
+    tag: "Company Website",
+    image: "https://res.cloudinary.com/dcsgax3ld/image/upload/v1772879554/cb81bb89-1ede-4b36-a105-cf9c992479fa.png",
+  }, 
+    {
     title: "NgYungNe Retreat",
     url: "https://ngyungne.org/",
-    screenshot: SHOT("https://ngyungne.org/"),
-    description:
-      "A retreat website with spiritual programs, schedules, teachings, and online registration.",
-    category: "Organization Website",
-    tags: ["React", "Calendar", "Forms"],
-    color: "warm",
+    desc: "A retreat website providing information about spiritual retreat programs, schedules, teachings, and registration.",
+    tag: "Retreat Website",
+    image: "https://res.cloudinary.com/dcsgax3ld/image/upload/v1772878885/Screenshot_2026-03-07_155502_obocbk.png",
   },
   {
     title: "Pure Land Travels",
     url: "https://purelandtravels.com.np/",
-    screenshot: SHOT("https://purelandtravels.com.np/"),
-    description:
-      "A travel agency website presenting tours, travel packages, and services for tourists exploring Nepal.",
-    category: "Travel Website",
-    tags: ["Next.js", "Booking", "Maps"],
-    color: "gold",
+    desc: "A travel agency website designed to present tours, travel packages, and services for tourists exploring Nepal.",
+    tag: "Travel Website",
+    image: "https://res.cloudinary.com/dcsgax3ld/image/upload/v1772878871/Screenshot_2026-03-07_155623_vkkjfp.png",
   },
   {
     title: "Trinity Waterproofing",
     url: "https://www.trinitywaterproofing.com.np/",
-    screenshot: SHOT("https://www.trinitywaterproofing.com.np/"),
-    description:
-      "Business portfolio with service listings and information for a waterproofing and construction solutions company.",
-    category: "Business Portfolio",
-    tags: ["React", "SEO", "Tailwind"],
-    color: "warm",
+    desc: "A company portfolio website with service listings and business information for a waterproofing solutions company.",
+    tag: "Business Portfolio",
+    image: "https://res.cloudinary.com/dcsgax3ld/image/upload/v1772878870/Screenshot_2026-03-07_155708_bbaoep.png",
   },
   {
     title: "RASS Engineering",
     url: "https://rassengineering.com.np/",
-    screenshot: SHOT("https://rassengineering.com.np/"),
-    description:
-      "A professional engineering company website highlighting services, projects, and corporate information.",
-    category: "Company Portfolio",
-    tags: ["React", "Node.js", "CMS"],
-    color: "gold",
+    desc: "A professional engineering company website highlighting services, projects, and corporate information.",
+    tag: "Company Portfolio",
+    image: "https://res.cloudinary.com/dcsgax3ld/image/upload/v1772878873/Screenshot_2026-03-07_155733_p1ldes.png",
   },
   {
     title: "WAS Media Marketing",
     url: "https://wasmediamarketing.com/",
-    screenshot: SHOT("https://wasmediamarketing.com/"),
-    description:
-      "A digital marketing agency website presenting services, portfolio, and business capabilities.",
-    category: "Agency Portfolio",
-    tags: ["MERN", "Analytics", "CMS"],
-    color: "warm",
+    desc: "A digital marketing agency website presenting services, portfolio, and business capabilities.",
+    tag: "Agency Portfolio",
+    image: "https://res.cloudinary.com/dcsgax3ld/image/upload/v1772878873/Screenshot_2026-03-07_155752_ibu5ah.png",
   },
   {
     title: "SNS Tech",
     url: "https://snstech.co",
-    screenshot: SHOT("https://snstech.co"),
-    description:
-      "A technology company website presenting IT services, solutions, and digital innovation capabilities.",
-    category: "Tech Company",
-    tags: ["React", "TypeScript", "AWS"],
-    color: "gold",
+    desc: "A technology company website presenting IT services, solutions, and digital innovation capabilities.",
+    tag: "Tech Company",
+    image: "https://res.cloudinary.com/dcsgax3ld/image/upload/v1772878871/Screenshot_2026-03-07_155808_eavkmr.png",
   },
   {
     title: "Rooted In Sound",
     url: "https://www.rootedinsound.com/",
-    screenshot: SHOT("https://www.rootedinsound.com/"),
-    description:
-      "A sound healing website focused on singing bowls and spiritual sound practices.",
-    category: "Wellness Website",
-    tags: ["React", "CMS", "Tailwind"],
-    color: "warm",
+    desc: "A website focused on sound healing, singing bowls, and spiritual sound practices.",
+    tag: "Wellness Website",
+    image: "https://res.cloudinary.com/dcsgax3ld/image/upload/v1772878878/Screenshot_2026-03-07_160158_ahhpsd.png",
+  },
+  {
+    title: "Padmasambhava Trip",
+    url: "https://padmasambhavatrip.com/",
+    desc: "A travel and pilgrimage website offering curated spiritual journeys and cultural experiences.",
+    tag: "Travel Website",
+    image: "https://res.cloudinary.com/dcsgax3ld/image/upload/v1772878883/Screenshot_2026-03-07_155607_slr7dk.png",
+  },
+  {
+    title: "Dharma Ideal",
+    url: "https://www.dharmaideal.org/",
+    desc: "A spiritual organization website providing resources, teachings, and community information.",
+    tag: "Organization Website",
+    image: "https://res.cloudinary.com/dcsgax3ld/image/upload/v1772878888/Screenshot_2026-03-07_155515_tnxnwz.png",
   },
 ];
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
-  const [hovered, setHovered] = useState(false);
-  const [imgError, setImgError] = useState(false);
-  const isGold = project.color === "gold";
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.55, delay: index * 0.06 }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className={`group relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ${
-        isGold ? "glass-card-gold" : "glass-card-blue"
-      } ${hovered ? "scale-[1.03] -translate-y-1.5 shadow-glow-gold" : ""}`}
-    >
-      {/* ── Screenshot thumbnail ── */}
-      <div className="relative h-44 overflow-hidden bg-background-card">
-        {/* Actual screenshot */}
-        {!imgError ? (
-          <img
-            src={project.screenshot}
-            alt={`${project.title} homepage screenshot`}
-            onError={() => setImgError(true)}
-            className={`w-full h-full object-cover object-top transition-transform duration-700 ${
-              hovered ? "scale-110" : "scale-100"
-            }`}
-          />
-        ) : (
-          /* Fallback if screenshot fails */
-          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-background-glass to-background-card">
-            <Globe className="w-10 h-10 text-primary/40" />
-          </div>
-        )}
-
-        {/* Overlay on hover */}
-        <motion.div
-          className="absolute inset-0 flex items-center justify-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: hovered ? 1 : 0 }}
-          transition={{ duration: 0.22 }}
-        >
-          <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`relative z-10 flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all hover:scale-105 ${
-              isGold
-                ? "bg-accent text-accent-foreground shadow-gold"
-                : "bg-primary text-primary-foreground shadow-blue"
-            }`}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Globe className="w-4 h-4" />
-            Visit Site
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
-        </motion.div>
-
-        {/* Category badge pinned top-right */}
-        <span
-          className={`absolute top-3 right-3 text-xs px-2.5 py-1 rounded-full font-semibold backdrop-blur-md ${
-            isGold
-              ? "bg-accent/20 text-accent-glow border border-accent/30"
-              : "bg-primary/20 text-primary-glow border border-primary/25"
-          }`}
-        >
-          {project.category}
-        </span>
-      </div>
-
-      {/* ── Card body ── */}
-      <div className="p-5">
-        <h3 className="font-display text-base font-bold text-foreground mb-2 leading-snug">
-          {project.title}
-        </h3>
-        <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">
-          {project.description}
-        </p>
-        <div className="flex flex-wrap gap-1.5">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs px-2 py-0.5 rounded bg-muted/60 text-muted-foreground border border-border/50 font-mono"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-export default function ProjectsSection() {
+const ProjectsSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="projects" className="section-padding" ref={ref}>
-      <div className="container mx-auto max-w-6xl">
-        <motion.div
+    <section id="projects" className="section-padding">
+      <div className="container mx-auto" ref={ref}>
+        <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-3xl md:text-5xl font-bold text-center mb-16"
         >
-          <span className="text-xs font-mono tracking-[0.3em] uppercase text-accent mb-4 block">
-            — Portfolio —
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold">
-            Featured{" "}
-            <span className="text-gradient-gold">Projects</span>
-          </h2>
-          <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-sm">
-            Production websites and platforms built for real clients across diverse industries.
-          </p>
-        </motion.div>
+          Featured <span className="gold-text">Projects</span>
+        </motion.h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, i) => (
-            <ProjectCard key={project.title} project={project} index={i} />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((p, i) => (
+            <motion.a
+              key={p.title}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: i * 0.06 }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="group glass-card rounded-xl overflow-hidden block"
+            >
+              <div className="h-48 relative overflow-hidden">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <ExternalLink className="text-secondary" size={32} />
+                </div>
+              </div>
+              <div className="p-5">
+                <span className="inline-block text-xs font-mono px-2 py-1 rounded-md bg-secondary/10 text-secondary mb-3">
+                  {p.tag}
+                </span>
+                <h3 className="font-semibold text-lg mb-2 text-foreground group-hover:text-secondary transition-colors">
+                  {p.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+              </div>
+            </motion.a>
           ))}
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default ProjectsSection;
