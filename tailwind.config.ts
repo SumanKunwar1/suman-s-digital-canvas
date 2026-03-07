@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -59,15 +64,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gold: {
-          DEFAULT: "hsl(43 90% 55%)",
-          light: "hsl(43 90% 68%)",
-          dark: "hsl(43 70% 38%)",
+        /* Warm beige palette tokens */
+        beige: {
+          light:  "hsl(38 55% 91%)",
+          mid:    "hsl(35 40% 76%)",
+          warm:   "hsl(35 48% 62%)",
+          tan:    "hsl(30 35% 48%)",
+          dark:   "hsl(28 22% 8%)",
         },
-        navy: {
-          DEFAULT: "hsl(220 45% 5%)",
-          light: "hsl(220 38% 9%)",
-          mid: "hsl(220 40% 7%)",
+        caramel: {
+          DEFAULT: "hsl(35 48% 62%)",
+          light:   "hsl(35 55% 74%)",
+          dark:    "hsl(35 35% 44%)",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -86,16 +94,16 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        "gradient-hero": "var(--gradient-hero)",
+        "gradient-hero":    "var(--gradient-hero)",
         "gradient-premium": "var(--gradient-premium)",
-        "gradient-gold": "var(--gradient-gold)",
-        "gradient-royal": "var(--gradient-royal)",
-        "gradient-card": "var(--gradient-card)",
+        "gradient-gold":    "var(--gradient-gold)",
+        "gradient-royal":   "var(--gradient-royal)",
+        "gradient-card":    "var(--gradient-card)",
       },
       boxShadow: {
-        "gold": "var(--shadow-gold)",
-        "blue": "var(--shadow-blue)",
-        "card": "var(--shadow-card)",
+        gold:       "var(--shadow-gold)",
+        blue:       "var(--shadow-blue)",
+        card:       "var(--shadow-card)",
         "glow-gold": "var(--shadow-glow-gold)",
         "glow-blue": "var(--shadow-glow-blue)",
       },
@@ -121,7 +129,7 @@ export default {
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
         "scale-in": {
-          "0%": { transform: "scale(0.9)", opacity: "0" },
+          "0%": { transform: "scale(0.92)", opacity: "0" },
           "100%": { transform: "scale(1)", opacity: "1" },
         },
         shimmer: {
@@ -130,11 +138,7 @@ export default {
         },
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-16px)" },
-        },
-        "spin-slow": {
-          from: { transform: "rotate(0deg)" },
-          to: { transform: "rotate(360deg)" },
+          "50%": { transform: "translateY(-14px)" },
         },
       },
       animation: {
@@ -146,7 +150,6 @@ export default {
         "scale-in": "scale-in 0.4s ease-out",
         shimmer: "shimmer 3s linear infinite",
         float: "float 6s ease-in-out infinite",
-        "spin-slow": "spin-slow 12s linear infinite",
       },
     },
   },
