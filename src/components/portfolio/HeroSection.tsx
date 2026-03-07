@@ -128,10 +128,10 @@ export default function HeroSection() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-2xl"
           >
             {[
-              { number: "10+", label: "Projects Built" },
+              { number: "40+", label: "Projects Built" },
               { number: "20+", label: "Technologies" },
-              { number: "2+",  label: "Years Experience" },
-              { number: "10+", label: "Clients Served" },
+              { number: "3+",  label: "Years Experience" },
+              { number: "35+", label: "Clients Served" },
             ].map((stat) => (
               <div key={stat.label} className="glass-card-gold rounded-xl p-4 text-center">
                 <div className="font-display text-2xl font-bold text-gradient-gold">{stat.number}</div>

@@ -16,7 +16,7 @@ const certifications = [
     issuer: "Amazon Web Services",
     icon: "☁️",
     color: "gold",
-    year: "2024",
+    year: "2025",
   },
   {
     title: "Programming for Everybody",
@@ -79,11 +79,7 @@ export default function EducationSection() {
                   BSc (Hons.) Information Technology
                 </h4>
                 <p className="text-primary font-semibold">Lord Buddha Education Foundation</p>
-                <div className="flex items-center gap-3">
-                  <span className="text-xs px-3 py-1 rounded-full bg-accent/15 text-accent border border-accent/25 font-bold">
-                    CGPA: 3.46
-                  </span>
-                </div>
+                
               </div>
 
               <div className="border-t border-border/50 pt-6">

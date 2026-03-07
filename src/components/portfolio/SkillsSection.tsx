@@ -57,6 +57,18 @@ const skillCategories = [
       { name: "Matplotlib", level: 72 },
     ],
   },
+  {
+    title: "Interpersonal Skills",
+    icon: "🤝",
+    color: "accent",
+    skills: [
+      { name: "Problem Solving", level: 88 },
+      { name: "Team Collaboration", level: 87 },
+      { name: "Adaptability", level: 75 },
+      { name: "Communication", level: 88 },
+      { name: "Critical Thinking", level: 92 },
+    ],
+  },
 ];
 
 function SkillBar({ name, level, color, index }: { name: string; level: number; color: string; index: number }) {
