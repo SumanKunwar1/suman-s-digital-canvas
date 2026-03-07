@@ -27,8 +27,8 @@ const contactInfo = [
 ];
 
 const socials = [
-  { icon: Github, label: "GitHub", href: "https://github.com/", color: "border-border/60 hover:border-foreground/40 text-foreground" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/", color: "border-primary/30 hover:border-primary/60 text-primary" },
+  { icon: Github, label: "GitHub", href: "https://github.com/SumanKunwar1/", color: "border-border/60 hover:border-foreground/40 text-foreground" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/suman-kunwar-204286227/", color: "border-primary/30 hover:border-primary/60 text-primary" },
 ];
 
 export default function ContactSection() {
