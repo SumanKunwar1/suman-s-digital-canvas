@@ -115,8 +115,14 @@ export default function HeroSection() {
               Contact Me
             </a>
             <button className="flex items-center gap-2 px-7 py-3.5 rounded-xl glass-card border border-border/60 text-foreground font-semibold hover:border-primary/40 transition-all duration-300 hover:scale-105 text-sm">
+              <a
+              href="https://drive.google.com/uc?export=download&id=1vtBzo9CEPgAv-5cQ1okgWTblOlpPAfog"
+              download
+              className="flex items-center gap-2 px-7 py-3.5 rounded-xl glass-card border border-border/60 text-foreground font-semibold hover:border-primary/40 transition-all duration-300 hover:scale-105 text-sm"
+            >
               <Download className="w-4 h-4" />
               Download CV
+            </a>
             </button>
           </motion.div>
 
