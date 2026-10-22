@@ -84,11 +84,12 @@ export const featuredSites: Featured[] = [
 // (Pure Land Hospitality, Constellation Cooperative, W.A.S. Media, and FBH Nepal's expired
 // certificate); Suman asked to keep them listed and will fix them.
 export const clientSites: { name: string; url: string; text: string }[] = [
-  { name: "FBH Nepal", url: "https://fbhnepal.com/", text: "Trade show site, top Google result in Nepal for “exhibition in Nepal”" },
   { name: "Pure Land Hospitality", url: "https://purelandhospitality.com.np/", text: "Hospitality services, accommodation and experiences" },
   { name: "Padmasambhava Trip", url: "https://padmasambhavatrip.com/", text: "Pilgrimage and cultural trips" },
   { name: "NgYungNe Retreat", url: "https://ngyungne.org/", text: "Retreat programmes, schedules and registration" },
   { name: "Rooted In Sound", url: "https://www.rootedinsound.com/", text: "Sound healing and singing bowls" },
+  { name: "Himalayan School of Outdoor Recreation", url: "https://hsor.education/", text: "Two-year outdoor recreation programme: admissions, scholarships, courses and semester calendars" },
+  { name: "FBH Nepal", url: "https://fbhnepal.com/", text: "Trade show site, top Google result in Nepal for “exhibition in Nepal”" },
   { name: "Dharma Ideal", url: "https://www.dharmaideal.org/", text: "Teachings and community for a spiritual organisation" },
   { name: "Constellation Cooperative", url: "https://constellationcooperative.com/", text: "Services and initiatives of a cooperative" },
   { name: "Trinity Waterproofing", url: "https://www.trinitywaterproofing.com.np/", text: "Services for a waterproofing company" },
