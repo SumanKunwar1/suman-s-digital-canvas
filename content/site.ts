@@ -88,7 +88,7 @@ export const clientSites: { name: string; url: string; text: string }[] = [
   { name: "Padmasambhava Trip", url: "https://padmasambhavatrip.com/", text: "Pilgrimage and cultural trips" },
   { name: "NgYungNe Retreat", url: "https://ngyungne.org/", text: "Retreat programmes, schedules and registration" },
   { name: "Rooted In Sound", url: "https://www.rootedinsound.com/", text: "Sound healing and singing bowls" },
-  { name: "Himalayan School of Outdoor Recreation", url: "https://hsor.education/", text: "Two-year outdoor recreation programme: admissions, scholarships, courses and semester calendars" },
+  { name: "Himalayan School of Outdoor Recreation", url: "https://hsor.education/", text: "Outdoor recreation school in Nepal" },
   { name: "FBH Nepal", url: "https://fbhnepal.com/", text: "Trade show site, top Google result in Nepal for “exhibition in Nepal”" },
   { name: "Dharma Ideal", url: "https://www.dharmaideal.org/", text: "Teachings and community for a spiritual organisation" },
   { name: "Constellation Cooperative", url: "https://constellationcooperative.com/", text: "Services and initiatives of a cooperative" },
