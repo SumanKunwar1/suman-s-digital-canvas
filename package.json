@@ -4,15 +4,17 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && node scripts/og.mjs",
+    "dev": "node init && next dev",
+    "build": "node init && next build && node scripts/og.mjs",
     "cv-pdf": "node scripts/cv-pdf.mjs",
     "images": "node scripts/images.mjs",
     "shots": "node scripts/shots.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "next": "16.4.2",
+    "node-fetch": "^3.3.2",
     "react": "19.3.1",
     "react-dom": "19.3.1"
   },
