@@ -6,7 +6,7 @@ export const site = {
   title: "Suman Kunwar · Full Stack Developer",
   description:
     "Full stack developer who built school management and accounting software used in Nepal. MSc Computer Science student at Sapienza University of Rome, open to part-time developer roles in Italy.",
-  cvPdf: "/suman-kunwar-cv.pdf",
+  cvPdf: "/Suman-Kunwar-CV.pdf",
 };
 
 export const person = {

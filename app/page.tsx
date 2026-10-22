@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CopyEmail, RomeTime } from "@/components/Bits";
+import { CopyEmail } from "@/components/Bits";
 import { Header, Footer } from "@/components/Chrome";
 import { ExternalIcon, NewTabNote, domainOf, newTab } from "@/components/External";
 import { Screenshot } from "@/components/Screenshot";
@@ -73,7 +73,6 @@ export default function Home() {
               </div>
               <p className="hero-meta">
                 Based in {person.location}
-                <RomeTime />
               </p>
             </div>
             <div className="hero-bench">

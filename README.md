@@ -21,7 +21,7 @@ Rules for design and copy: [DESIGN_RULES.md](DESIGN_RULES.md). Content brief: [B
 ```bash
 npm install
 npm run dev     # http://localhost:3000
-npm run build   # static site in out/, plus the CV PDF and Open Graph image
+npm run build   # static site in out/, plus the Open Graph image
 npm run shots   # review screenshots at 1440 and 375px in review/, flags horizontal overflow
 ```
 
@@ -35,3 +35,7 @@ location / {
 }
 error_page 404 /404.html;
 ```
+
+## CV
+
+The "Download CV" buttons serve `public/Suman-Kunwar-CV.pdf`. To update the CV, replace that file (keep the name).

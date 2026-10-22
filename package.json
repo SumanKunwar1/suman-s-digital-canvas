@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/cv-pdf.mjs && node scripts/og.mjs",
+    "build": "next build && node scripts/og.mjs",
+    "cv-pdf": "node scripts/cv-pdf.mjs",
     "images": "node scripts/images.mjs",
     "shots": "node scripts/shots.mjs",
     "typecheck": "tsc --noEmit"

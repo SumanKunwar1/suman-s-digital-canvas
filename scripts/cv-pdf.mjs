@@ -1,6 +1,5 @@
-// Prints the built /cv page to PDF, so the download always matches the site.
-// Runs after `next build`; writes out/suman-kunwar-cv.pdf and keeps a copy in public/ for `next dev`.
-import { copyFile } from "node:fs/promises";
+// Optional: prints the built /cv page to out/cv-from-page.pdf. The download button serves
+// public/Suman-Kunwar-CV.pdf, which is Suman's own CV file.
 import { chromium } from "@playwright/test";
 import { serve } from "./serve.mjs";
 
@@ -11,8 +10,7 @@ try {
   const page = await browser.newPage();
   await page.goto(`http://localhost:${PORT}/cv/`, { waitUntil: "networkidle" });
   await page.emulateMedia({ media: "print" });
-  await page.pdf({ path: "out/suman-kunwar-cv.pdf", format: "A4", preferCSSPageSize: true, printBackground: true });
-  await copyFile("out/suman-kunwar-cv.pdf", "public/suman-kunwar-cv.pdf");
+  await page.pdf({ path: "out/cv-from-page.pdf", format: "A4", preferCSSPageSize: true, printBackground: true });
   const pages = await page.evaluate(() => Math.ceil(document.documentElement.scrollHeight / 1122));
   console.log(`CV PDF written (about ${pages} page${pages === 1 ? "" : "s"} tall in print).`);
 } finally {
