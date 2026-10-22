@@ -32,3 +32,6 @@ next-env.d.ts
 
 # Playwright review screenshots
 review/
+
+# Claude Code local settings and skills
+.claude/
