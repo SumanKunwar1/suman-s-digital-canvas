@@ -1,0 +1,185 @@
+/* A4 CV. On screen it reads as a page; in print it fills two A4 sheets at most. */
+
+.page {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 2rem var(--gutter) 4rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.head h1 {
+  font-size: 2.25rem;
+  line-height: 1.1;
+}
+
+.role {
+  font-size: 1.125rem;
+  margin-top: 0.25rem;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 1.25rem;
+  margin-top: 0.75rem;
+  color: var(--pencil);
+}
+
+.contact a {
+  color: inherit;
+}
+
+.block {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink);
+}
+
+.block > h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+@media (min-width: 640px) {
+  .block {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    column-gap: 1.5rem;
+  }
+}
+
+.block p + p {
+  margin-top: 0.4rem;
+}
+
+.avail {
+  color: var(--pencil);
+}
+
+.entry + .entry {
+  margin-top: 1rem;
+}
+
+.entry h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.entry h3 span {
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.where {
+  color: var(--pencil);
+}
+
+.entry ul {
+  margin-top: 0.3rem;
+}
+
+.entry li {
+  position: relative;
+  padding-left: 0.9rem;
+}
+
+.entry li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.35rem;
+  height: 1px;
+  background: var(--ink);
+}
+
+.entry li + li {
+  margin-top: 0.15rem;
+}
+
+.product + .product {
+  margin-top: 0.5rem;
+}
+
+.defs div {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1rem;
+}
+
+.defs div + div {
+  margin-top: 0.2rem;
+}
+
+.defs dt {
+  font-weight: 700;
+}
+
+.refs {
+  margin-top: 1.5rem;
+  color: var(--pencil);
+}
+
+@page {
+  size: A4;
+  margin: 14mm 15mm;
+}
+
+@media print {
+  .toolbar {
+    display: none;
+  }
+
+  .page {
+    max-width: none;
+    padding: 0;
+    font-size: 9.6pt;
+    line-height: 1.38;
+  }
+
+  .head h1 {
+    font-size: 20pt;
+  }
+
+  .role {
+    font-size: 11pt;
+  }
+
+  .block {
+    display: grid;
+    grid-template-columns: 30mm 1fr;
+    column-gap: 5mm;
+    margin-top: 4mm;
+    padding-top: 2.5mm;
+  }
+
+  .block > h2 {
+    font-size: 10pt;
+  }
+
+  .entry h3 {
+    font-size: 10pt;
+  }
+
+  .entry,
+  .product,
+  .defs div {
+    break-inside: avoid;
+  }
+
+  .page a {
+    text-decoration: none;
+  }
+}

@@ -1,72 +1,37 @@
+# sumankunwar.info.np
 
-## Project info
+Suman Kunwar's portfolio. Next.js, exported as static HTML and served by nginx.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Change something
 
-## How can I edit this code?
+- Contact details, availability, experience, education, skills: `content/site.ts`
+- Case studies: `content/work.ts`
+- Interactive demos in the hero: `components/Workbench.tsx`
 
-There are several ways of editing your application.
+Rules for design and copy: [DESIGN_RULES.md](DESIGN_RULES.md). Content brief: [BRIEF.md](BRIEF.md). Facts from the codebases: [FACTS.md](FACTS.md).
 
-**Use Lovable**
+## Add screenshots (demo data only)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+1. Save PNGs in `screenshots/`. Name phone screens `phone-….png`.
+2. `npm run images` converts them to AVIF and WebP in `public/shots/` and prints a line for each.
+3. Paste those lines into the product's `shots: []` in `content/work.ts` and write the alt text. For FullBagERP, the first shot is also the home page hero and the Open Graph image.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Build and check
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # static site in out/, plus the CV PDF and Open Graph image
+npm run shots   # review screenshots at 1440 and 375px in review/, flags horizontal overflow
 ```
 
-**Edit a file directly in GitHub**
+## Deploy
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Copy the contents of `out/` to the web root on the server. The nginx server block needs:
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```nginx
+location / {
+    try_files $uri $uri/ $uri.html =404;
+}
+error_page 404 /404.html;
+```

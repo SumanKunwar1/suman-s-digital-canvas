@@ -23,3 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 config.bat
+
+# Next.js
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+
+# Playwright review screenshots
+review/
